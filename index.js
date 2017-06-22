@@ -4,8 +4,13 @@ const pingTarget = '8.8.8.8';
 
 session.pingHost(pingTarget, function(error, pingTarget, sent, rcvd) {
   var ms = rcvd - sent;
-  if (error) console.log(pingTarget + ': ' + error.toString());
-  else console.log(pingTarget + ': Alive (ms=' + ms + ')');
+  if (error) {
+		console.log(pingTarget + ': ' + error.toString());
+		}
+	else {
+		console.log('Ho ho ho! Your connection to ' + pingTarget + ' is alive.')
+//		console.log(pingTarget + ': Alive (ms=' + ms + ')');
+			}				
 });
 
 console.log(
